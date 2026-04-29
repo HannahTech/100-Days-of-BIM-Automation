@@ -1,0 +1,25 @@
+RoomName,Department,Occupancy
+Bandstand,Outdoor,Outdoor Public
+Café,Food Service,Restaurant
+Cafe,Food Service,Restaurant
+Cafe kitchen,Food Service,Restaurant
+Café Kitchen,Food Service,Restaurant
+Commercial/Retail,Retail,Commercial
+Corridor,Circulation,Circulation
+Elevator,Circulation,Circulation
+Green Roof,Outdoor,Outdoor Public
+Live/Work Loft Unit,Residential,Residential Two Sto
+Live/Work Unit,Residential,Residential One Sto
+Machine RM,Service,Service
+Mezzanine Dining,Food Service,Restaurant
+Office Unit,Office,Office
+Outdoor Covered Dining,Food Service,Restaurant
+Parking Garage,Parking,Parking
+Pocket Park,Outdoor,Outdoor Public
+Private Patio,Residential,Outdoor Private
+Residential Lobby,Residential,Residential Public
+Stair,Circulation,Circulation
+Storage,Service,Storage
+Studio Unit,Residential,Residential One Sto
+Two Story Studio Unit,Residential,Residential Two Sto
+Utility,Service,Service
