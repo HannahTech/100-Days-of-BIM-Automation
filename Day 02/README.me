@@ -1,0 +1,46 @@
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/3c87ab92-871a-4dee-976d-d75969cf38d4" autoplay loop muted playsinline>
+  </video>
+</p>
+
+---
+
+# Room Audit & Parameter Injection
+
+This repository contains two pyRevit-based Python scripts designed to eliminate manual data entry and auditing within Autodesk Revit models. These tools are built to handle high-volume parameter management across complex architectural and MEP projects.
+
+## 🛠 The Tools
+
+### 1. Automated Data Hunter (Room Audit)
+**The Problem:** Manually clicking rooms to find missing `Department` or `Occupancy` data is time-consuming and prone to human error.
+**The Solution:** This script scans all rooms in the current level, identifies empty parameters, and generates a streamlined report of missing data.
+
+### 2. CSV-to-Revit Injection
+**The Problem:** Updating parameters (e.g., changing "Residential" to "Condominium") across hundreds of elements.
+**The Solution:** A script that reads a list of room requirements and performs a batch update to Revit parameters instantly.
+
+## 📈 Performance Comparison
+
+| Method | Time Elapsed | Efficiency Gain |
+| :--- | :--- | :--- |
+| **Manual Process** | 10:37 | Baseline |
+| **Automated Script** | 00:05* | **~99% Faster** |
+
+*\*Execution time. Total video including code walkthrough is 2:15.*
+
+## 🚀 How to Use
+1. Ensure you have **pyRevit** installed.
+2. Copy the `.py` script folders into your custom pyRevit extension directory.
+3. Reload pyRevit.
+4. Click the **Audit** button to find gaps or the **Inject** button to batch-update parameters.
+
+## 💻 Tech Stack
+- **Language:** Python
+- **API:** Revit API
+- **Platform:** pyRevit / Autodesk Revit
+
+```
+
+## 👤 Author
+## Hannah (Hengameh) Khajehpour
+Digital Design Technologist | BIM Automation Specialist
