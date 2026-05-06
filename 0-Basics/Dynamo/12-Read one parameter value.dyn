@@ -1,0 +1,219 @@
+{
+  "Uuid": "8b0ae2fb-0eb6-4479-a5b3-77b325689023",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "12-Read one parameter value",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "cfa49403-f47c-4264-9960-aa8f04ed02f1-001309e8"
+      ],
+      "Id": "d130654386be4e29bf035c745039e40e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d6c56f6e099546019dd0848097395b34",
+          "Name": "Element",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a model element from the document."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "cbdf82af905f4ca0bd64cffcdc768fc1",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "31e72f81c95e46c5b659445b4881dbb8",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "Comments"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "59a8a69c2bc542bda374b7b761560522",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "4c11a990f9f6471b861cedb6015b888e",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a883e2d692d44c2a9e42e4cdd9863e7f",
+          "Name": "parameterName",
+          "Description": "The name of the parameter whose value you want to obtain.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8485b7daecde40d38afbb1337c777c8a",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.Element.GetParameterValueByName@string",
+      "Replication": "Auto",
+      "Description": "Get the value of one of the element's parameters.\n\nElement.GetParameterValueByName (parameterName: string): var[]..[]"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "d6c56f6e099546019dd0848097395b34",
+      "End": "4c11a990f9f6471b861cedb6015b888e",
+      "Id": "5c1eda85ff4c40508bcb66a01308bdbe",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "31e72f81c95e46c5b659445b4881dbb8",
+      "End": "a883e2d692d44c2a9e42e4cdd9863e7f",
+      "Id": "9f0faefaed6040208d84d7392be3db9e",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.3",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "8.2",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.3.0.6316",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "d130654386be4e29bf035c745039e40e",
+        "Name": "Select Model Element",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 200.0,
+        "Y": 215.0
+      },
+      {
+        "Id": "cbdf82af905f4ca0bd64cffcdc768fc1",
+        "Name": "String",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 307.0,
+        "Y": 422.0
+      },
+      {
+        "Id": "59a8a69c2bc542bda374b7b761560522",
+        "Name": "Element.GetParameterValueByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 561.0,
+        "Y": 285.0
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "a8c6cf9fa4ba48428519348d816df9ba",
+        "Title": "Read one parameter value :  ",
+        "DescriptionText": "doc.GetElement(element_id).LookupParameter(\"Comments\")",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "d130654386be4e29bf035c745039e40e",
+          "cbdf82af905f4ca0bd64cffcdc768fc1",
+          "59a8a69c2bc542bda374b7b761560522"
+        ],
+        "HasNestedGroups": false,
+        "Left": 190.0,
+        "Top": 142.0,
+        "Width": 727.0,
+        "Height": 412.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 215.0,
+        "InitialHeight": 369.0,
+        "TextblockHeight": 63.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -56.0,
+    "Y": -18.0,
+    "Zoom": 1.0
+  }
+}

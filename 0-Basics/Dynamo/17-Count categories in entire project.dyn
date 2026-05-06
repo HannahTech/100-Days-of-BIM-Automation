@@ -1,0 +1,184 @@
+{
+  "Uuid": "2d97fd29-5733-450b-9f48-384f9675ae67",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "17-Count categories in entire project",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "import clr\r\n\r\nclr.AddReference(\"RevitServices\")\r\nfrom RevitServices.Persistence import DocumentManager\r\n\r\nclr.AddReference(\"RevitAPI\")\r\nfrom Autodesk.Revit.DB import FilteredElementCollector\r\n\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\nelements = FilteredElementCollector(doc).WhereElementIsNotElementType().ToElements()\r\n\r\ncategory_counts = {}\r\n\r\nfor element in elements:\r\n    if element.Category:\r\n        category_name = element.Category.Name\r\n\r\n        if category_name not in category_counts:\r\n            category_counts[category_name] = 0\r\n\r\n        category_counts[category_name] += 1\r\n\r\nresult = []\r\n\r\nfor category_name in sorted(category_counts.keys()):\r\n    result.append(category_name + \" : \" + str(category_counts[category_name]))\r\n\r\nOUT = result",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "b340865dcb794fd488765816642a4c65",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "6a2f37e9a298410bada207eb0c52d8fe",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8a7dc5a6921948e38143e65df856e0b8",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "65930cd148f54b4587310fa839f0d58f",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "e54d2c7f2626467a9e3b4472796c40b0",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6001e2c52e1349b387f107db75fbc666",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "8a7dc5a6921948e38143e65df856e0b8",
+      "End": "e54d2c7f2626467a9e3b4472796c40b0",
+      "Id": "f0f67fba906a4f6c9a33424fd3ea3dcc",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": null,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.3",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "8.2",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.3.0.6316",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "b340865dcb794fd488765816642a4c65",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 245.0,
+        "Y": 187.0
+      },
+      {
+        "Id": "65930cd148f54b4587310fa839f0d58f",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 582.0,
+        "Y": 188.0
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "fb30f77168a14791ae52d4eaaf6b5390",
+        "Title": "Count categories in entire project",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "b340865dcb794fd488765816642a4c65",
+          "65930cd148f54b4587310fa839f0d58f"
+        ],
+        "HasNestedGroups": false,
+        "Left": 235.0,
+        "Top": 114.0,
+        "Width": 634.0,
+        "Height": 372.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 187.0,
+        "InitialHeight": 329.0,
+        "TextblockHeight": 63.0,
+        "Background": "#FFBB87C6"
+      }
+    ],
+    "X": 0.0,
+    "Y": 0.0,
+    "Zoom": 1.0
+  }
+}

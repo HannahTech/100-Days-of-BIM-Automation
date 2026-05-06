@@ -1,0 +1,184 @@
+{
+  "Uuid": "637c783d-39c6-4bcd-a8d0-cd8d8da30e1c",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "16-Automatically read all categories",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "import clr\r\n\r\nclr.AddReference(\"RevitServices\")\r\nfrom RevitServices.Persistence import DocumentManager\r\n\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\ncategories = doc.Settings.Categories\r\n\r\ncategory_names = []\r\n\r\nfor cat in categories:\r\n    category_names.append(cat.Name)\r\n\r\nOUT = sorted(category_names)",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "e428e2c984434bbcab2a893d348b5a4f",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "9c43e62cc6664b72978ff76ef6c12ed6",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4688bf5fec21433ea91a361e798f87e4",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "09f34dc6879c48c1811bb7a35b2c4cbd",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "b9589cb1c61a4535beeed95e6f205e60",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e5de3c85c38249e887d685eadfc4d22e",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "4688bf5fec21433ea91a361e798f87e4",
+      "End": "b9589cb1c61a4535beeed95e6f205e60",
+      "Id": "01502a44976e4c83bff80f1f575ff61b",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": null,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.3",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "8.2",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.3.0.6316",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "e428e2c984434bbcab2a893d348b5a4f",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 172.3963575412596,
+        "Y": 194.26593262681655
+      },
+      {
+        "Id": "09f34dc6879c48c1811bb7a35b2c4cbd",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 499.52970852764486,
+        "Y": 197.31375887824248
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "261bf6b6b71f45cb86d358972ef602cd",
+        "Title": "Automatically read all categories:  ",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "e428e2c984434bbcab2a893d348b5a4f",
+          "09f34dc6879c48c1811bb7a35b2c4cbd"
+        ],
+        "HasNestedGroups": false,
+        "Left": 162.3963575412596,
+        "Top": 121.26593262681655,
+        "Width": 624.1333509863853,
+        "Height": 374.04782625142593,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 194.26593262681655,
+        "InitialHeight": 331.04782625142593,
+        "TextblockHeight": 63.0,
+        "Background": "#FFFFAA45"
+      }
+    ],
+    "X": 8.308872632812495,
+    "Y": 5.782473210937496,
+    "Zoom": 0.984308078125
+  }
+}
